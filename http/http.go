@@ -63,3 +63,22 @@ func HttpPutRequest(url string, timeout time.Duration, jsonReq []byte) (int, []b
 	}
 	return resp.StatusCode, bodyBytes, err
 }
+
+func HttpDeleteRequest(url string, timeout time.Duration, jsonReq []byte) (int, []byte, error) {
+	req, err := http.NewRequest(http.MethodDelete, url, bytes.NewBuffer(jsonReq))
+	if err != nil {
+		return 500, nil, err
+	}
+	req.Header.Set("Content-Type", "application/json; charset=utf-8")
+	client := &http.Client{Timeout: time.Second * timeout}
+	resp, err := client.Do(req)
+	if err != nil {
+		return 500, nil, err
+	}
+	defer resp.Body.Close()
+	bodyBytes, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		return 500, nil, err
+	}
+	return resp.StatusCode, bodyBytes, err
+}
