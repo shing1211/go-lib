@@ -1,5 +1,5 @@
 go version
-rm ./go.mod
+del .\go.mod
 go mod init github.com/shing1211/go-lib
 go mod tidy
 set GOPROXY=proxy.golang.org
