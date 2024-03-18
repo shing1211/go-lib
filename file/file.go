@@ -6,6 +6,8 @@ import (
 	"strings"
 )
 
+var gormSourceDir string
+
 // FileWithLineNum return the file name and line number of the current file
 func FileWithLineNum() string {
 	// the second caller usually from gorm internal, so set i start from 2
