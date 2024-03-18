@@ -2,7 +2,7 @@ package http
 
 import (
 	"bytes"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"time"
 )
@@ -19,7 +19,7 @@ func HttpGetRequest(url string, timeout time.Duration) (int, []byte, error) {
 		return 500, nil, err
 	}
 	defer res.Body.Close()
-	retbody, err := ioutil.ReadAll(res.Body)
+	retbody, err := io.ReadAll(res.Body)
 	if err != nil {
 		return 500, nil, err
 	}
@@ -38,7 +38,7 @@ func HttpPostRequest(url string, timeout time.Duration, jsonReq []byte) (int, []
 		return 500, nil, err
 	}
 	defer resp.Body.Close()
-	bodyBytes, err := ioutil.ReadAll(resp.Body)
+	bodyBytes, err := io.ReadAll(resp.Body)
 	if err != nil {
 		return 500, nil, err
 	}
@@ -57,7 +57,7 @@ func HttpPutRequest(url string, timeout time.Duration, jsonReq []byte) (int, []b
 		return 500, nil, err
 	}
 	defer resp.Body.Close()
-	bodyBytes, err := ioutil.ReadAll(resp.Body)
+	bodyBytes, err := io.ReadAll(resp.Body)
 	if err != nil {
 		return 500, nil, err
 	}
@@ -76,7 +76,7 @@ func HttpDeleteRequest(url string, timeout time.Duration, jsonReq []byte) (int, 
 		return 500, nil, err
 	}
 	defer resp.Body.Close()
-	bodyBytes, err := ioutil.ReadAll(resp.Body)
+	bodyBytes, err := io.ReadAll(resp.Body)
 	if err != nil {
 		return 500, nil, err
 	}
