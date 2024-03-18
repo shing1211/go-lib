@@ -1,3 +1,4 @@
 go version
 go mod tidy
-go list -m github.com/shing1211/go-lib@latest
+set GOPROXY=proxy.golang.org
+go list -m github.com/shing1211/go-lib
