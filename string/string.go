@@ -15,6 +15,15 @@ func StringToInt64(s string) (int64, error) {
 	return numero, err
 }
 
+func StringTouInt64(s string) (uint64, error) {
+	numero, err := strconv.ParseUint(s, 0, 64)
+	if err != nil {
+		log.Warn(err)
+		return 0, err
+	}
+	return numero, err
+}
+
 func StringToFloat64(s string) (float64, error) {
 	numero, err := strconv.ParseFloat(s, 64)
 	if err != nil {
