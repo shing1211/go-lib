@@ -24,6 +24,10 @@ func Config() Configuration {
 	var configuration Configuration
 	getOSEnv := oslib.GetOSEnv
 
+	serverPort := string(getOSEnv("GOLANG_API_SERVER_PORT", "8090"))
+	serverMode := getOSEnv("GOLANG_API_SERVER_MODE", Env.Dev)
+	serverLogLevel := getOSEnv("GOLANG_API_LOG_LEVEL", "6")
+
 	// for elastic search configurations
 	elasticHost := getOSEnv("ELASTIC_HOST", "elasticsearch")
 	elasticPort := string(getOSEnv("ELASTIC_PORT", "9200"))
@@ -62,10 +66,6 @@ func Config() Configuration {
 	rdbmsDbMaxOpenConns := getOSEnv("RDBMS_MAXOPENCONNS", "100")
 	rdbmsDbConnMaxLifetime := getOSEnv("RDBMS_CONNMAXLIFETIME", "1h")
 	rdbmsDbLogLevel := getOSEnv("RDBMS_LOGLEVEL", "4")
-
-	serverPort := string(getOSEnv("GOLANG_API_SERVER_PORT", "8090"))
-	serverMode := getOSEnv("GOLANG_API_SERVER_MODE", "development")
-	serverLogLevel := getOSEnv("GOLANG_API_LOG_LEVEL", "6")
 
 	mySigningKey := getOSEnv("MySigningKey", "Use_a_strong_and_long_random_key")
 	JWTExpireTime, err := strconv.Atoi(getOSEnv("JWTExpireTime", "2"))
