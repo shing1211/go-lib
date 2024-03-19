@@ -25,23 +25,21 @@ func GetRdbmsDB() *gorm.DB {
 }
 
 // InitRdbmsDB - function to initialize db
-func InitRdbmsDB() *gorm.DB {
+func InitRdbmsDB(config config.RDBMSConfig) *gorm.DB {
 	var db = DB
 
-	config := config.Config()
-
-	driver := config.Rdbms.RdbmsDbDriver
-	username := config.Rdbms.RdbmsDbUser
-	password := config.Rdbms.RdbmsDbPassword
-	database := config.Rdbms.RdbmsDbName
-	host := config.Rdbms.RdbmsDbHost
-	port := config.Rdbms.RdbmsDbPort
-	sslmode := config.Rdbms.RdbmsDbSslmode
-	timeZone := config.Rdbms.RdbmsDbTimeZone
-	maxIdleConns := config.Rdbms.RdbmsDbMaxIdleConns
-	maxOpenConns := config.Rdbms.RdbmsDbMaxOpenConns
-	connMaxLifetime := config.Rdbms.RdbmsDbConnMaxLifetime
-	logLevel := config.Rdbms.RdbmsDbLogLevel
+	driver := config.RdbmsDbDriver
+	username := config.RdbmsDbUser
+	password := config.RdbmsDbPassword
+	database := config.RdbmsDbName
+	host := config.RdbmsDbHost
+	port := config.RdbmsDbPort
+	sslmode := config.RdbmsDbSslmode
+	timeZone := config.RdbmsDbTimeZone
+	maxIdleConns := config.RdbmsDbMaxIdleConns
+	maxOpenConns := config.RdbmsDbMaxOpenConns
+	connMaxLifetime := config.RdbmsDbConnMaxLifetime
+	logLevel := config.RdbmsDbLogLevel
 
 	switch driver {
 	case "mysql":

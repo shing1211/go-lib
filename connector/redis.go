@@ -23,12 +23,11 @@ func GetRedisClient() (*redis.Client, error) {
 	return redisClient, nil
 }
 
-func InitRedisConn() error {
-	config := config.Config()
-	host := config.Redis.RedisHost
-	port := config.Redis.RedisPort
+func InitRedisConn(config config.RedisConfig) error {
+	host := config.RedisHost
+	port := config.RedisPort
 	//user := config.Redis.RedisUser
-	pwd := config.Redis.RedisPwd
+	pwd := config.RedisPwd
 	redisHost = host + ":" + port
 	log.Info("Connecting to Redis at: " + redisHost)
 	client := redis.NewClient(&redis.Options{

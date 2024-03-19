@@ -27,14 +27,12 @@ func GetMongoDBClient() (*mongo.Client, error) {
 	return mongoDB, nil
 }
 
-func InitMongoDBConn() error {
-	mongoDBConfig := config.Config()
-
-	host := mongoDBConfig.MongoDB.MongoDBHost
-	port := mongoDBConfig.MongoDB.MongoDBPort
-	user := mongoDBConfig.MongoDB.MongoDBUser
-	password := mongoDBConfig.MongoDB.MongoDBPwd
-	dbName := mongoDBConfig.MongoDB.MongoDBName
+func InitMongoDBConn(config config.MongoConfig) error {
+	host := config.MongoDBHost
+	port := config.MongoDBPort
+	user := config.MongoDBUser
+	password := config.MongoDBPwd
+	dbName := config.MongoDBName
 
 	log.Info("Connecting to MongoDB at: " + host + ":" + port)
 	mongoDBHost = "mongodb://" + host + ":" + port + "/" + dbName
@@ -61,12 +59,12 @@ func InitMongoDBConn() error {
 	return nil
 }
 
-func PingMongoConn() error {
+func PingMongoConn(config config.MongoConfig) error {
 	log.Info("MongoDB Healthcheck")
 	if mongoDB == nil {
-		if err := InitMongoDBConn; err != nil {
+		if err := InitMongoDBConn(config); err != nil {
 			log.Warn("Failed to get/initialize MongoDB client connection", err)
-			return err()
+			return err
 		}
 	}
 	if err := mongoDB.Ping(context.TODO(), nil); err != nil {
@@ -77,12 +75,12 @@ func PingMongoConn() error {
 	return nil
 }
 
-func OpenCollection(collectionName string) (*mongo.Collection, error) {
-	dbName := config.Config().MongoDB.MongoDBName
+func OpenCollection(config config.MongoConfig, collectionName string) (*mongo.Collection, error) {
+	dbName := config.MongoDBName
 	if mongoDB == nil {
-		if err := InitMongoDBConn; err != nil {
+		if err := InitMongoDBConn(config); err != nil {
 			log.Warn("Failed to get/initialize MongoDB client connection", err)
-			return nil, err()
+			return nil, err
 		}
 	}
 	return mongoDB.Database(dbName).Collection(collectionName), nil

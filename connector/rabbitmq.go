@@ -11,12 +11,11 @@ var RabbitMQConn *amqp.Connection
 var rabbitMQUrl string
 var rabbitMQHost string
 
-func InitRabbitMQConn() error {
-	rabbitMQConfig := config.Config()
-	host := rabbitMQConfig.RabbitMQ.RabbitMQHost
-	port := rabbitMQConfig.RabbitMQ.RabbitMQPort
-	user := rabbitMQConfig.RabbitMQ.RabbitMQUser
-	pwd := rabbitMQConfig.RabbitMQ.RabbitMQPwd
+func InitRabbitMQConn(config config.RabbitMQConfig) error {
+	host := config.RabbitMQHost
+	port := config.RabbitMQPort
+	user := config.RabbitMQUser
+	pwd := config.RabbitMQPwd
 
 	rabbitMQHost = "amqp://" + host + ":" + port + "/"
 	rabbitMQUrl = "amqp://" + user + ":" + pwd + "@" + host + ":" + port + "/"

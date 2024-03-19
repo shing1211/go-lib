@@ -21,11 +21,10 @@ func GetESClient() *elasticsearch.Client {
 	return EsClient
 }
 
-func InitESConnection() *error {
-	config := config.Config()
-	esURL := "http://" + config.Elastic.ElasticHost + ":" + config.Elastic.ElasticPort
-	esUser := config.Elastic.ElasticUser
-	esPwd := config.Elastic.ElasticPwd
+func InitESConnection(config config.ElasticConfig) *error {
+	esURL := "http://" + config.ElasticHost + ":" + config.ElasticPort
+	esUser := config.ElasticUser
+	esPwd := config.ElasticPwd
 
 	log.Info("Connecting to elasticsearch at: " + esURL)
 
