@@ -4,7 +4,7 @@ import (
 	"fmt"
 
 	amqp "github.com/rabbitmq/amqp091-go"
-	config "github.com/shing1211/go-lib/config"
+	"github.com/shing1211/go-lib/config"
 )
 
 var RabbitMQConn *amqp.Connection

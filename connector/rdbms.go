@@ -3,7 +3,7 @@ package connector
 import (
 	"database/sql"
 
-	config "github.com/shing1211/go-lib/config"
+	"github.com/shing1211/go-lib/config"
 	log "github.com/sirupsen/logrus"
 	"gorm.io/driver/mysql"
 	"gorm.io/driver/postgres"

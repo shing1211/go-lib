@@ -4,7 +4,7 @@ import (
 	"strings"
 
 	"github.com/elastic/go-elasticsearch/v7"
-	config "github.com/shing1211/go-lib/config"
+	"github.com/shing1211/go-lib/config"
 	log "github.com/sirupsen/logrus"
 )
 

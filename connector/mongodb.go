@@ -5,7 +5,7 @@ import (
 	"errors"
 	"time"
 
-	config "github.com/shing1211/go-lib/config"
+	"github.com/shing1211/go-lib/config"
 	log "github.com/sirupsen/logrus"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
