@@ -1,0 +1,44 @@
+package model
+
+type Symbol struct {
+	Symbol    string
+	PctChange float64
+	Turnover  float64
+	BuyRatio  float64
+	Interval  string
+	StartTime string
+	Open      string
+	High      string
+	Low       string
+	Close     string
+	Kline1m   []Kline
+	Kline3m   []Kline
+	Kline5m   []Kline
+	Kline15m  []Kline
+	Kline30m  []Kline
+	Kline1h   []Kline
+	Kline2h   []Kline
+	Kline4h   []Kline
+	Kline6h   []Kline
+	Kline8h   []Kline
+	Kline12h  []Kline
+	Kline1d   []Kline
+	Kline3d   []Kline
+	Kline1w   []Kline
+	Kline1M   []Kline
+	Ta1m      Ta
+	Ta3m      Ta
+	Ta5m      Ta
+	Ta15m     Ta
+	Ta30m     Ta
+	Ta1h      Ta
+	Ta2h      Ta
+	Ta4h      Ta
+	Ta6h      Ta
+	Ta8h      Ta
+	Ta12h     Ta
+	Ta1d      Ta
+	Ta3d      Ta
+	Ta1w      Ta
+	Ta1M      Ta
+}
