@@ -8,6 +8,8 @@ import (
 	log "github.com/sirupsen/logrus"
 )
 
+const CONTENT_TYPE_JSON = "application/json"
+
 // Configuration stores setting values
 type Configuration struct {
 	Port                string `json:"port"`

@@ -1,6 +1,6 @@
 package config
 
-// ServerConfig ...
+// ServerConfig
 type ServerConfig struct {
 	ServerPort     string // public port of server
 	ServerMode     string

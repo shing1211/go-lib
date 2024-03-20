@@ -6,3 +6,12 @@ type RabbitMQConfig struct {
 	RabbitMQUser string
 	RabbitMQPwd  string
 }
+
+type RabbitMQPublisherConfig struct {
+	RabbitMQPublishAPIHost               string
+	RabbitMQPublishAPIPort               string
+	RabbitMQPublishAPIEndpointPrefix     string
+	RabbitMQPublishAPIEndpointKline      string
+	RabbitMQPublishAPIEndpointAggTrade   string
+	RabbitMQPublishAPIEndpointPriceDepth string
+}

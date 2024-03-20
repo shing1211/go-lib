@@ -1,7 +1,7 @@
 package config
 
+// for Elastic search configurations
 type ElasticConfig struct {
-	// for Elastic search configurations
 	ElasticHost string
 	ElasticPort string
 	ElasticUser string

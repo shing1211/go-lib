@@ -1,5 +1,6 @@
 package config
 
+// RedisConfig
 type RedisConfig struct {
 	RedisHost string
 	RedisPort string
