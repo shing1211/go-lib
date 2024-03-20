@@ -12,10 +12,10 @@ func Measure(start time.Time, name string) {
 	fmt.Println()
 }
 
-func convertUnixTime(unixTime string) time.Time {
+func ConvertUnixTime(unixTime string) time.Time {
 	i, err := strconv.ParseInt(unixTime, 10, 64)
 	if err != nil {
-		panic(err)
+		fmt.Println(err)
 	}
 	tm := time.Unix(i, 0)
 	return tm
