@@ -12,7 +12,7 @@ require (
 	github.com/sirupsen/logrus v1.9.3
 	go.mongodb.org/mongo-driver v1.14.0
 	gopkg.in/mgo.v2 v2.0.0-20190816093944-a6b53ec6cb22
-	gorm.io/driver/mysql v1.5.5
+	gorm.io/driver/mysql v1.5.6
 	gorm.io/driver/postgres v1.5.7
 	gorm.io/driver/sqlite v1.5.5
 	gorm.io/gorm v1.25.8
