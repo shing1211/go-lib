@@ -1,6 +1,6 @@
 module github.com/shing1211/go-lib
 
-go 1.22.1
+go 1.22.2
 
 require (
 	github.com/adshao/go-binance/v2 v2.5.0
@@ -15,7 +15,7 @@ require (
 	gorm.io/driver/mysql v1.5.6
 	gorm.io/driver/postgres v1.5.7
 	gorm.io/driver/sqlite v1.5.5
-	gorm.io/gorm v1.25.9
+	gorm.io/gorm v1.25.10
 )
 
 require (
