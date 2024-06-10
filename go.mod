@@ -3,7 +3,7 @@ module github.com/shing1211/go-lib
 go 1.22.3
 
 require (
-	github.com/adshao/go-binance/v2 v2.5.0
+	github.com/adshao/go-binance/v2 v2.5.1
 	github.com/dgrijalva/jwt-go v3.2.0+incompatible
 	github.com/elastic/go-elasticsearch/v7 v7.17.10
 	github.com/go-redis/redis/v8 v8.11.5
