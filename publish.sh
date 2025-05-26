@@ -5,6 +5,6 @@ rm go.sum
 go mod init github.com/shing1211/go-lib
 go mod tidy
 set GOPROXY=proxy.golang.org
-git tag v0.1.20
-git push origin v0.1.20
-go list -m github.com/shing1211/go-lib@v0.1.20
+git tag v0.1.21
+git push origin v0.1.21
+go list -m github.com/shing1211/go-lib@v0.1.21
